@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+                    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                         <soapenv:Header>
+                              <ns1:CallOptions xmlns:ns1="http://api.zuora.com/" soapenv:mustUnderstand="0">
+                                   <ns1:useSingleTransaction>true</ns1:useSingleTransaction>
+                              </ns1:CallOptions>
+                              <ns1:SessionHeader xmlns:ns1="http://api.zuora.com/"    soapenv:mustUnderstand="0">
+                                       <ns1:session>PKa9y4NKsJKFN2hOVLNmRS8da6Zi66m5To-8iI94LgRTyomjVr3yZM5N_hH7BVELnrJoPgcfqE1u96ZqggiddgkSf4e3_no-                                                jdJxsrPAx60XgyKx6BHPjLyTgC0h0h7O5trtuMtJHhE9vIEjpGL6aw==
+                                        </ns1:session>
+                              </ns1:SessionHeader>
+                         </soapenv:Header>
+                         <soapenv:Body>
+                                 <ns1:create xmlns:ns1="http://api.zuora.com/">
+                                   <ns1:zObjects xmlns:ns2="http://object.api.zuora.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Amendment">
+                                    <ns2:Id xsi:nil="1" />
+                                    <ns2:ContractEffectiveDate>2010-07-21T11:44:49.875+08:00</ns2:ContractEffectiveDate>
+                                    <ns2:CustomerAcceptanceDate>2010-07-21T11:44:49.875+08:0</ns2:CustomerAcceptanceDate>
+                                    <ns2:EffectiveDate>2010-07-21T11:44:49.875+08:00</ns2:EffectiveDate>
+                                    <ns2:Name>test_amend1279683889873</ns2:Name>
+                                    <ns2:RatePlanData>
+                                          <ns1:RatePlan xsi:type="ns2:RatePlan">
+                                              <ns2:AmendmentSubscriptionRatePlanId>402892ca29f3191a0129f31a84d000a8
+                                              </ns2:AmendmentSubscriptionRatePlanId>
+                                         </ns1:RatePlan>
+                                         <ns1:RatePlanChargeData>
+                                         <ns1:RatePlanCharge xsi:type="ns2:RatePlanCharge">
+                                               <ns2:Description>111111</ns2:Description>
+                                               <ns2:Price>1000</ns2:Price>
+                                               <ns2:ProductRatePlanChargeId>402892ca29f3191a0129f31a82b00099</ns2:ProductRatePlanChargeId>
+                                          </ns1:RatePlanCharge>
+                                         </ns1:RatePlanChargeData>
+                                    </ns2:RatePlanData>
+                                    <ns2:ServiceActivationDate>2010-07-21T11:44:49.875+08:00</ns2:ServiceActivationDate>
+                                    <ns2:SubscriptionId>402892ca29f3191a0129f31a86ad00ac</ns2:SubscriptionId>
+                                    <ns2:Type>UpdateProduct</ns2:Type>
+                                   </ns1:zObjects>
+                                  </ns1:create>
+                             </soapenv:Body>
+                          </soapenv:Envelope>

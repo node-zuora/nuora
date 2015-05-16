@@ -1,0 +1,22 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=406A6E7592318936D61EE0BD1590B0DD; Path=/main2
+Content-Type: text/xml;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 20 Nov 2008 09:26:23 GMT
+
+134
+<?xml version='1.0' encoding='UTF-8'?>
+   <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+      <soapenv:Body>
+         <ns1:createResponse xmlns:ns1="http://api.zuora.com/">
+            <ns1:result>
+               <ns1:Id>402882eb1db8f6b6011db938bed2008e</ns1:Id>
+               <ns1:Success>true</ns1:Success>
+            </ns1:result>
+         </ns1:createResponse>
+22
+
+      </soapenv:Body>
+   </soapenv:Envelope>0
+

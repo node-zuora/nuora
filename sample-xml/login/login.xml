@@ -1,0 +1,16 @@
+POST /apps/services/a/1.0 HTTP/1.1
+Content-Type: text/xml; charset=UTF-8
+SOAPAction: ""
+User-Agent: Axis2
+Host: www1.zuora.com:8081
+
+<?xml version='1.0' encoding='UTF-8'?>
+   <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+      <soapenv:Body>
+         <ns1:login xmlns:ns1="http://api.zuora.com/">
+            <ns1:username>user@org.com</ns1:username>
+            <ns1:password>password</ns1:password>
+         </ns1:login>
+      </soapenv:Body>
+   </soapenv:Envelope>
+

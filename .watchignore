@@ -1,0 +1,9 @@
+.watchignore
+.inspector.pid
+nuora.pid
+nuora.log
+4913
+watch
+watch.log
+debug.log
+start

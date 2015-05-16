@@ -1,0 +1,29 @@
+POST /apps/services/a/2.0 HTTP/1.1
+Content-Type: text/xml; charset=UTF-8
+SOAPAction: ""
+User-Agent: Axis2
+Host: localhost:8081
+Transfer-Encoding: chunked
+
+3eb
+<?xml version='1.0' encoding='UTF-8'?>
+   <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+      <soapenv:Header>
+         <ns1:SessionHeader xmlns:ns1="http://api.zuora.com/" soapenv:mustUnderstand="0">
+            <ns1:session>B4EpRix4IEuLkbTv2fOD0nQLZfNqBNb3lB1VX/JosCxxuZjQULOSbw+OWkGzX12+2THutRvaEqH40Xur3k2uNw==</ns1:session>
+         </ns1:SessionHeader>
+      </soapenv:Header>
+      <soapenv:Body>
+         <ns1:update xmlns:ns1="http://api.zuora.com/">
+            <ns1:zObjects xmlns:ns2="http://object.api.zuora.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Amendment">
+               <ns2:Id>402882eb1db8f6b6011db92f3a8f0043</ns2:Id>
+               <ns2:Description>Test changing</ns2:Description>
+               <ns2:ContractEffectiveDate>2008-11-20T01:16:01.033-08:00</ns2:ContractEffectiveDate>
+               <ns2:CustomerAcceptanceDate>2008-11-22T01:16:01.355-08:00</ns2:CustomerAcceptanceDate>
+               <ns2:ServiceActivationDate>2008-11-22T01:16:01.355-08:00</ns2:ServiceActivationDate>
+               <ns2:Status>Completed</ns2:Status>
+            </ns1:zObjects>
+         </ns1:update>
+      </soapenv:Body>
+   </soapenv:Envelope>0
+

@@ -1,0 +1,27 @@
+POST /apps/services/a/2.0 HTTP/1.1
+Content-Type: text/xml; charset=UTF-8
+SOAPAction: ""
+User-Agent: Axis2
+Host: localhost:8081
+Transfer-Encoding: chunked
+
+345
+<?xml version='1.0' encoding='UTF-8'?>
+   <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+      <soapenv:Header>
+         <ns1:SessionHeader xmlns:ns1="http://api.zuora.com/" soapenv:mustUnderstand="0">
+            <ns1:session>B4EpRix4IEuLkbTv2fOD0nQLZfNqBNb3lB1VX/JosCxxuZjQULOSbw+OWkGzX12+nH9jkqouCG2XO/7pEMy2bg==</ns1:session>
+         </ns1:SessionHeader>
+      </soapenv:Header>
+      <soapenv:Body>
+         <ns1:create xmlns:ns1="http://api.zuora.com/">
+            <ns1:zObjects xmlns:ns2="http://object.api.zuora.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Amendment">
+               <ns2:EffectiveDate>2008-11-20T01:26:22.988-08:00</ns2:EffectiveDate>
+               <ns2:Name>test_amend1227173182986</ns2:Name>
+               <ns2:SubscriptionId>402882eb1db9380c011db938ac570011</ns2:SubscriptionId>
+               <ns2:Type>UpdateProduct</ns2:Type>
+            </ns1:zObjects>
+         </ns1:create>
+      </soapenv:Body>
+   </soapenv:Envelope>0
+

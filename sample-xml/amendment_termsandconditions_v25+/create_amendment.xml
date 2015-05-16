@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+            <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+            <soapenv:Header>
+                  <ns1:CallOptions xmlns:ns1="http://api.zuora.com/" soapenv:mustUnderstand="0">
+                      <ns1:useSingleTransaction>true</ns1:useSingleTransaction>
+                  </ns1:CallOptions>
+                  <ns1:SessionHeader xmlns:ns1="http://api.zuora.com/" soapenv:mustUnderstand="0">
+                  <ns1:session>xPk5dejAqUbz_DiBq7o5cFElOq4LxEhjAq8UHlEKHqlhWPTyhoz2MqpaJsZIPOKqxuRCL7Cb518P8NFBtMySZ0DNJ8epwVJe80USidAiBllSPh8oOnBRfLOySxnSsTMV4hXW_XOYGvRSQpbBigbC0w==
+                  </ns1:session>
+                  </ns1:SessionHeader>
+            </soapenv:Header>
+            <soapenv:Body>
+                  <ns1:create xmlns:ns1="http://api.zuora.com/">
+                  <ns1:zObjects xmlns:ns2="http://object.api.zuora.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Amendment">
+                        <ns2:Id xsi:nil="1" />
+                        <ns2:ContractEffectiveDate>2010-07-21T12:24:53.764+08:00</ns2:ContractEffectiveDate>
+                        <ns2:CustomerAcceptanceDate>2010-07-21T12:24:53.764+08:00</ns2:CustomerAcceptanceDate>
+                        <ns2:EffectiveDate>2010-07-21T12:24:53.769+08:00</ns2:EffectiveDate>
+                        <ns2:Name>test_amend1279686293769</ns2:Name>
+                        <ns2:ServiceActivationDate>2010-07-21T12:24:53.764+08:00</ns2:ServiceActivationDate>
+                        <ns2:SubscriptionId>402892ca29f33da70129f33f35fb00ac</ns2:SubscriptionId>
+                        <ns2:Type>TermsAndConditions</ns2:Type>
+                        <ns2:TermCommitment>InitialAndRenewalTerm</ns2:TermCommitment>
+                        <ns2:TermStartDate>2010-07-21T12:42:38.772+08:00</ns2:TermStartDate>
+                        <ns2:RenewalTerm>6</ns2:RenewalTerm>
+                        <ns2:InitialTerm>12</ns2:InitialTerm>
+                        <ns2:AutoRenew>true</ns2:AutoRenew>
+                  </ns1:zObjects>
+                  </ns1:create>
+             </soapenv:Body>
+             </soapenv:Envelope>

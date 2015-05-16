@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+   <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+      <soapenv:Header>
+         <ns1:SessionHeader xmlns:ns1="http://api.zuora.com/" soapenv:mustUnderstand="0">
+            <ns1:session>B4EpRix4IEuLkbTv2fOD0nQLZfNqBNb3lB1VX/JosCxxuZjQULOSbw+OWkGzX12+NMRkXSDNHXgpryh8N6kGZw==</ns1:session>
+         </ns1:SessionHeader>
+      </soapenv:Header>
+      <soapenv:Body>
+         <ns1:query xmlns:ns1="http://api.zuora.com/">
+            <ns1:queryString>select id, name, status, purchaseordernumber from Account where id = 'ff8080811ca15d19011cdc91b18638e0'</ns1:queryString>
+         </ns1:query>
+      </soapenv:Body>
+   </soapenv:Envelope>
+

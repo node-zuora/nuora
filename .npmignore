@@ -1,0 +1,14 @@
+*.log
+*.pid
+node_modules
+watch
+start
+kill
+test
+test2
+config/*local*
+.git
+.gitignore
+.history
+.npmignore
+.watchignore

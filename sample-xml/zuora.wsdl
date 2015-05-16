@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:zns="http://api.zuora.com/" 
+	xmlns:ons="http://object.api.zuora.com/" 
+	xmlns:fns="http://fault.api.zuora.com/" 
+	targetNamespace="http://api.zuora.com/">
+	<types>
+		<schema attributeFormDefault="qualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://object.api.zuora.com/">
+			<complexType name="zObject">
+				<sequence>
+					<element minOccurs="0" maxOccurs="unbounded" name="fieldsToNull" nillable="true" type="string" />
+					<element minOccurs="0" maxOccurs="1" name="Id" nillable="true" type="zns:ID" />
+				</sequence>
+			</complexType>
+			<complexType name="Account">
+				<complexContent>
+					<extension base="ons:zObject">
+						<sequence>
+							<element minOccurs="0" name="AccountNumber" nillable="true" type="string" />
+							<element minOccurs="0" name="AllowInvoiceEdit" nillable="true" type="boolean" />
+							<element minOccurs="0" name="AutoPay" nillable="true" type="boolean" />
+							<element minOccurs="0" name="Batch" nillable="true" type="string" />
+							<element minOccurs="0" name="BillCycleDay" type="int" />
+							<element minOccurs="0" name="BillToId" nillable="true" type="zns:ID" />
+							<element minOccurs="0" name="CreatedDate" nillable="true" type="dateTime" />
+							<element minOccurs="0" name="CrmId" nillable="true" type="string" />
+							<element minOccurs="0" name="Currency" nillable="true" type="string" />
+							<element minOccurs="0" name="CustomerServiceRepName" nillable="true" type="string" />
+							<element minOccurs="0" name="DefaultPaymentMethodId" nillable="true" type="zns:ID" />
+							<element minOccurs="0" name="Name" nillable="true" type="string" />
+							<element minOccurs="0" name="PaymentTerm" nillable="true" type="string" /><!-- user-defined enum -->
+							<element minOccurs="0" name="PurchaseOrderNumber" nillable="true" type="string" />
+							<element minOccurs="0" name="SalesRepName" nillable="true" type="string" />
+							<element minOccurs="0" name="SoldToId" nillable="true" type="zns:ID" />
+							<element minOccurs="0" name="Status" nillable="true" type="string" />
+							<element minOccurs="0" name="UpdatedDate" nillable="true" type="dateTime" />
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="Contact">
+				<complexContent>
+					<extension base="ons:zObject">
+						<sequence>
+							<element minOccurs="0" name="AccountId" nillable="true" type="zns:ID" />
+							<element minOccurs="0" name="Address1" nillable="true" type="string" />
+							<element minOccurs="0" name="Address2" nillable="true" type="string" />
+							<element minOccurs="0" name="City" nillable="true" type="string" />
+							<element minOccurs="0" name="Country" nillable="true" type="string" />
+							<element minOccurs="0" name="CreatedDate" nillable="true" type="dateTime" />
+							<element minOccurs="0" name="Fax" nillable="true" type="string" />
+							<element minOccurs="0" name="FirstName" nillable="true" type="string" />
+							<element minOccurs="0" name="HomePhone" nillable="true" type="string" />
+							<element minOccurs="0" name="LastName" nillable="true" type="string" />
+							<element minOccurs="0" name="MobilePhone" nillable="true" type="string" />
+							<element minOccurs="0" name="NickName" nillable="true" type="string" />
+							<element minOccurs="0" name="OtherPhone" nillable="true" type="string" />
+							<element minOccurs="0" name="OtherPhoneType" nillable="true" type="string" />
+							<element minOccurs="0" name="PersonalEmail" nillable="true" type="string" />
+							<element minOccurs="0" name="PostalCode" nillable="true" type="string" />
+							<element minOccurs="0" name="State" nillable="true" type="string" />
+							<element minOccurs="0" name="UpdatedDate" nillable="true" type="dateTime" />
+							<element minOccurs="0" name="WorkEmail" nillable="true" type="string" />
+							<element minOccurs="0" name="WorkPhone" nillable="true" type="string" />
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			
+			<complexType name="PaymentMethod">
+				<complexContent>
+					<extension base="ons:zObject">
+						<sequence>
+							<element minOccurs="0" name="AccountId" nillable="true" type="zns:ID" />
+							<element minOccurs="0" name="Active" nillable="true" type="boolean" />
+							<element minOccurs="0" name="CreatedDate" nillable="true" type="dateTime" />
+							<element minOccurs="0" name="CreditCardAddress1" nillable="true" type="string" />
+							<element minOccurs="0" name="CreditCardAddress2" nillable="true" type="string" />
+							<element minOccurs="0" name="CreditCardCity" nillable="true" type="string" />
+							<element minOccurs="0" name="CreditCardCountry" nillable="true" type="string" />
+							<element minOccurs="0" name="CreditCardExpirationMonth" nillable="true" type="int" />
+							<element minOccurs="0" name="CreditCardExpirationYear" nillable="true" type="int" />
+							<element minOccurs="0" name="CreditCardHolderName" nillable="true" type="string" />
+							<element minOccurs="0" name="CreditCardMaskNumber" nillable="true" type="string" />
+							<element minOccurs="0" name="CreditCardNumber" nillable="true" type="string" />
+							<element minOccurs="0" name="CreditCardPostalCode" nillable="true" type="string" />
+							<element minOccurs="0" name="CreditCardState" nillable="true" type="string" />
+							<element minOccurs="0" name="CreditCardType" nillable="true" type="string" />
+							<element minOccurs="0" name="LastTransactionDateTime" nillable="true" type="dateTime" />
+							<element minOccurs="0" name="LastTransactionStatus" nillable="true" type="string" />
+							<element minOccurs="0" name="Name" nillable="true" type="string" />
+							<element minOccurs="0" name="Type" nillable="true" type="string" />
+							<element minOccurs="0" name="UpdatedDate" nillable="true" type="dateTime" />
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="RatePlan">
+				<complexContent>
+					<extension base="ons:zObject">
+						<sequence>
+							<element minOccurs="0" name="AmendmentId" nillable="true" type="string" />
+							<element minOccurs="0" name="AmendmentSubscriptionRatePlanId" nillable="true" type="string" />
+							<element minOccurs="0" name="AmendmentType" nillable="true" type="string" />
+							<element minOccurs="0" name="Name" nillable="true" type="string" /><!-- do we need this? -->
+							<element minOccurs="0" name="ProductRatePlanId" nillable="true" type="zns:ID" />
+							<element minOccurs="0" name="SubscriptionId" nillable="true" type="zns:ID" />
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="RatePlanCharge">
+				<complexContent>
+					<extension base="ons:zObject">
+						<sequence>
+							<element minOccurs="0" name="AccountingCode" nillable="true" type="string" />
+							<element minOccurs="0" name="ChargeModel" nillable="true" type="string" />
+							<element minOccurs="0" name="ChargeType" nillable="true" type="string" />
+							<element minOccurs="0" name="Description" nillable="true" type="string" />
+							<element minOccurs="0" name="IncludedUnits" nillable="true" type="double" />
+							<element minOccurs="0" name="Name" nillable="true" type="string" />
+							<element minOccurs="0" name="NumberOfPeriods" nillable="true" type="long" />
+							<element minOccurs="0" name="ProductRatePlanChargeId" nillable="true" type="zns:ID" />
+							<element minOccurs="0" name="Quantity" nillable="true" type="double" />
+							<element minOccurs="0" name="TriggerEvent" nillable="true" type="string" />
+							<element minOccurs="0" name="UOM" nillable="true" type="string" />
+							<element minOccurs="0" name="RatePlanId" nillable="true" type="zns:ID" />
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="Subscription">
+				<complexContent>
+					<extension base="ons:zObject">
+						<sequence>
+							<element minOccurs="0" name="AccountId" nillable="true" type="zns:ID" />
+							<element minOccurs="0" name="AutoRenew" nillable="true" type="boolean" />
+							<element minOccurs="0" name="ContractAcceptanceDate" nillable="true" type="dateTime" />
+							<element minOccurs="0" name="ContractEffectiveDate" nillable="true" type="dateTime" />
+							<element minOccurs="0" name="Currency" nillable="true" type="string" />
+							<element minOccurs="0" name="InitialTerm" nillable="true" type="int" />
+							<element minOccurs="0" name="Name" nillable="true" type="string" />
+							<element minOccurs="0" name="Notes" nillable="true" type="string" />
+							<element minOccurs="0" name="RenewalTerm" nillable="true" type="int" />
+							<element minOccurs="0" name="ServiceActivationDate" nillable="true" type="dateTime" />
+							<element minOccurs="0" name="Status" nillable="true" type="string" />
+							<element minOccurs="0" name="TermStartDate" nillable="true" type="dateTime" />
+							<element minOccurs="0" name="Version" nillable="true" type="int" />
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+		<schema attributeFormDefault="qualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://api.zuora.com/">
+			<simpleType name="ID">
+				<restriction base="xs:string">
+					<length value="32" />
+					<pattern value='[a-zA-Z0-9]{32}' />
+				</restriction>
+			</simpleType>
+			<complexType name="LoginResult">
+				<sequence>
+					<element name="Session" nillable="true" type="xs:string" />
+					<element name="ServerUrl" nillable="true" type="xs:string" />
+				</sequence>
+			</complexType>
+			<complexType name="SubscribeRequest">
+				<sequence>
+					<element minOccurs="0" name="Account" nillable="true" type="ons:Account" />
+					<element minOccurs="0" name="PaymentMethod" nillable="true" type="ons:PaymentMethod" />
+					<element minOccurs="0" name="BillToContact" nillable="true" type="ons:Contact" />
+					<element minOccurs="0" name="SoldToContact" nillable="true" type="ons:Contact" />
+					<element minOccurs="0" name="SubscriptionData" nillable="true" type="zns:SubscriptionData" />
+				</sequence>
+			</complexType>
+			<complexType name="SubscriptionData">
+				<sequence>
+					<element minOccurs="0" name="Subscription" nillable="true" type="ons:Subscription" />
+					<element minOccurs="0" maxOccurs="unbounded" name="RatePlanData" nillable="true" type="zns:RatePlanData" />
+				</sequence>
+			</complexType>
+			<complexType name="RatePlanData">
+				<sequence>
+					<element minOccurs="0" name="RatePlan" nillable="true" type="ons:RatePlan" />
+					<element maxOccurs="unbounded" minOccurs="0" name="RatePlanCharge" nillable="true" type="ons:RatePlanCharge" />
+				</sequence>
+			</complexType>
+			<complexType name="SubscribeResult">
+				<sequence>
+					<element minOccurs="0" name="AccountId" nillable="true" type="zns:ID" />
+					<element minOccurs="0" name="AccountNumber" nillable="true" type="string" />
+					<element minOccurs="0" maxOccurs="unbounded" name="Errors" nillable="true" type="zns:Error" />
+					<element minOccurs="0" name="InvoiceId" nillable="true" type="zns:ID" />
+					<element minOccurs="0" name="InvoiceNumber" nillable="true" type="string" />
+					<element minOccurs="0" name="PaymentTransactionNumber" nillable="true" type="string" />
+					<element minOccurs="0" name="SubscriptionId" nillable="true" type="zns:ID" />
+					<element minOccurs="0" name="SubscriptionNumber" nillable="true" type="string" />
+					<element minOccurs="0" maxOccurs="1" name="Success" type="boolean" />
+				</sequence>
+			</complexType>
+			<complexType name="SaveResult">
+				<sequence>
+					<element minOccurs="0" maxOccurs="unbounded" name="Errors" nillable="true" type="zns:Error" />
+					<element minOccurs="0" maxOccurs="1" name="Id" nillable="true" type="zns:ID" />
+					<element minOccurs="0" maxOccurs="1" name="Success" type="boolean" />
+				</sequence>
+			</complexType>
+			<complexType name="DeleteResult">
+				<sequence>
+					<element name="errors" minOccurs="0" maxOccurs="unbounded" type="zns:Error" nillable="true" />
+					<element name="id" minOccurs="0" maxOccurs="1" type="zns:ID" nillable="true" />
+					<element name="success" minOccurs="0" maxOccurs="1" type="boolean" />
+				</sequence>
+			</complexType>
+			<simpleType name="QueryLocator">
+				<restriction base="xs:string" />
+			</simpleType>
+			<complexType name="QueryResult">
+				<sequence>
+					<element name="done" type="xs:boolean" />
+					<element name="queryLocator" type="zns:QueryLocator" nillable="true" />
+					<element name="records" type="ons:zObject" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+					<element name="size" type="xs:int" />
+				</sequence>
+			</complexType>
+			<complexType name="Error">
+				<sequence>
+					<element minOccurs="0" name="Code" nillable="true" type="zns:ErrorCode" />
+					<element minOccurs="0" name="Message" nillable="true" type="string" />
+					<element minOccurs="0" name="Field" nillable="true" type="string" />
+				</sequence>
+			</complexType>
+			<simpleType name="ErrorCode">
+				<restriction base="xs:string">
+					<enumeration value="CANNOT_DELETE" />
+					<enumeration value="CREDIT_CARD_PROCESSING_FAILURE" />
+					<enumeration value="DUPLICATE_VALUE" />
+					<enumeration value="INVALID_FIELD" />
+					<enumeration value="INVALID_LOGIN" />
+					<enumeration value="INVALID_SESSION" />
+					<enumeration value="INVALID_TYPE" />
+					<enumeration value="INVALID_ID" />
+					<enumeration value="INVALID_VALUE" />
+					<enumeration value="MALFORMED_QUERY" />
+					<enumeration value="MAX_RECORDS_EXCEEDED" />
+					<enumeration value="MISSING_REQUIRED_VALUE" />
+					<enumeration value="UNKNOWN_ERROR" />
+					<enumeration value="TRANSACTION_FAILED" />
+				</restriction>
+			</simpleType>
+			<element name="login">
+				<complexType>
+					<sequence>
+						<element minOccurs="0" maxOccurs="1" name="username" type="string" />
+						<element minOccurs="0" maxOccurs="1" name="password" type="string" />
+					</sequence>
+				</complexType>
+			</element>
+			<element name="loginResponse">
+				<complexType>
+					<sequence>
+						<element minOccurs="0" maxOccurs="1" name="result" type="zns:LoginResult" />
+					</sequence>
+				</complexType>
+			</element>
+			<element name="subscribe">
+				<complexType>
+					<sequence>
+						<element name="subscribes" minOccurs="0" maxOccurs="unbounded" type="zns:SubscribeRequest" />
+					</sequence>
+				</complexType>
+			</element>
+			<element name="subscribeResponse">
+				<complexType>
+					<sequence>
+						<element name="result" minOccurs="0" maxOccurs="unbounded" type="zns:SubscribeResult" />
+					</sequence>
+				</complexType>
+			</element>
+			<element name="create">
+				<complexType>
+					<sequence>
+						<element minOccurs="0" maxOccurs="unbounded" name="zObjects" type="ons:zObject" />
+					</sequence>
+				</complexType>
+			</element>
+			<element name="createResponse">
+				<complexType>
+					<sequence>
+						<element minOccurs="0" maxOccurs="unbounded" name="result" type="zns:SaveResult" />
+					</sequence>
+				</complexType>
+			</element>
+			<element name="update">
+				<complexType>
+					<sequence>
+						<element minOccurs="0" maxOccurs="unbounded" name="zObjects" type="ons:zObject" />
+					</sequence>
+				</complexType>
+			</element>
+			<element name="updateResponse">
+				<complexType>
+					<sequence>
+						<element minOccurs="0" maxOccurs="unbounded" name="result" type="zns:SaveResult" />
+					</sequence>
+				</complexType>
+			</element>
+			<element name="delete">
+				<complexType>
+					<sequence>
+						<element name="type" type="string" minOccurs="1" maxOccurs="1" />
+						<element name="ids" type="zns:ID" minOccurs="0" maxOccurs="unbounded" />
+					</sequence>
+				</complexType>
+			</element>
+			<element name="deleteResponse">
+				<complexType>
+					<sequence>
+						<element name="result" type="zns:DeleteResult" minOccurs="0" maxOccurs="unbounded" />
+					</sequence>
+				</complexType>
+			</element>
+			<element name="query">
+				<complexType>
+					<sequence>
+						<element name="queryString" type="xs:string" />
+					</sequence>
+				</complexType>
+			</element>
+			<element name="queryResponse">
+				<complexType>
+					<sequence>
+						<element name="result" type="zns:QueryResult" />
+					</sequence>
+				</complexType>
+			</element>
+			<element name="SessionHeader">
+				<complexType>
+					<sequence>
+						<element name="session" type="string" />
+					</sequence>
+				</complexType>
+			</element>
+			<element name="DummyHeader">
+				<complexType>
+					<sequence>
+						<element minOccurs="0" name="Account" nillable="true" type="ons:Account" />
+						<element minOccurs="0" name="RatePlan" nillable="true" type="ons:RatePlan" />
+						<element minOccurs="0" name="RatePlanCharge" nillable="true" type="ons:RatePlanCharge" />
+						<any namespace="##targetNamespace" minOccurs="0" maxOccurs="unbounded" processContents="lax" />
+					</sequence>
+				</complexType>
+			</element>
+		</schema>
+		<schema attributeFormDefault="qualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://fault.api.zuora.com/">
+			<complexType name="ApiFault">
+				<sequence>
+					<element minOccurs="0" name="FaultCode" nillable="true" type="zns:ErrorCode" />
+					<element minOccurs="0" name="FaultMessage" nillable="true" type="string" />
+				</sequence>
+			</complexType>
+			<element name="fault" type="fns:ApiFault" />
+			<complexType name="LoginFault">
+				<complexContent>
+					<extension base="fns:ApiFault" />
+				</complexContent>
+			</complexType>
+			<element name="LoginFault" type="fns:LoginFault" />
+			<complexType name="InvalidTypeFault">
+				<complexContent>
+					<extension base="fns:ApiFault" />
+				</complexContent>
+			</complexType>
+			<element name="InvalidTypeFault" type="fns:InvalidTypeFault" />
+			<complexType name="InvalidValueFault">
+				<complexContent>
+					<extension base="fns:ApiFault" />
+				</complexContent>
+			</complexType>
+			<element name="InvalidValueFault" type="fns:InvalidValueFault" />
+			<complexType name="MalformedQueryFault">
+				<complexContent>
+					<extension base="fns:ApiFault" />
+				</complexContent>
+			</complexType>
+			<element name="MalformedQueryFault" type="fns:MalformedQueryFault" />
+			<complexType name="InvalidQueryLocatorFault">
+				<complexContent>
+					<extension base="fns:ApiFault" />
+				</complexContent>
+			</complexType>
+			<element name="InvalidQueryLocatorFault" type="fns:InvalidQueryLocatorFault" />
+			<complexType name="UnexpectedErrorFault">
+				<complexContent>
+					<extension base="fns:ApiFault" />
+				</complexContent>
+			</complexType>
+			<element name="UnexpectedErrorFault" type="fns:UnexpectedErrorFault" />
+		</schema>
+	</types>
+	<message name="ApiFault">
+		<part name="fault" element="fns:fault" />
+	</message>
+	<message name="LoginFault">
+		<part name="fault" element="fns:LoginFault" />
+	</message>
+	<message name="InvalidTypeFault">
+		<part name="fault" element="fns:InvalidTypeFault" />
+	</message>
+	<message name="InvalidValueFault">
+		<part name="fault" element="fns:InvalidValueFault" />
+	</message>
+	<message name="MalformedQueryFault">
+		<part name="fault" element="fns:MalformedQueryFault" />
+	</message>
+	<message name="InvalidQueryLocatorFault">
+		<part name="fault" element="fns:InvalidQueryLocatorFault" />
+	</message>
+	<message name="UnexpectedErrorFault">
+		<part name="fault" element="fns:UnexpectedErrorFault" />
+	</message>
+	<message name="loginRequest">
+		<part name="parameters" element="zns:login" />
+	</message>
+	<message name="loginResponse">
+		<part name="parameters" element="zns:loginResponse" />
+	</message>
+	<message name="subscribeRequest">
+		<part name="parameters" element="zns:subscribe" />
+	</message>
+	<message name="subscribeResponse">
+		<part name="parameters" element="zns:subscribeResponse" />
+	</message>
+	<message name="createRequest">
+		<part name="parameters" element="zns:create" />
+	</message>
+	<message name="createResponse">
+		<part name="parameters" element="zns:createResponse" />
+	</message>
+	<message name="updateRequest">
+		<part name="parameters" element="zns:update" />
+	</message>
+	<message name="updateResponse">
+		<part name="parameters" element="zns:updateResponse" />
+	</message>
+	<message name="deleteRequest">
+		<part name="parameters" element="zns:delete" />
+	</message>
+	<message name="deleteResponse">
+		<part name="parameters" element="zns:deleteResponse" />
+	</message>
+	<message name="queryRequest">
+		<part name="parameters" element="zns:query" />
+	</message>
+	<message name="queryResponse">
+		<part name="parameters" element="zns:queryResponse" />
+	</message>
+	<message name="Header">
+		<part name="SessionHeader" element="zns:SessionHeader" />
+	</message>
+	<portType name="Soap">
+		<operation name="login">
+			<input message="zns:loginRequest" />
+			<output message="zns:loginResponse" />
+			<fault message="zns:LoginFault" name="LoginFault" />
+			<fault message="zns:UnexpectedErrorFault" name="UnexpectedErrorFault" />
+		</operation>
+		<operation name="subscribe">
+			<input message="zns:subscribeRequest" />
+			<output message="zns:subscribeResponse" />
+			<fault message="zns:UnexpectedErrorFault" name="UnexpectedErrorFault" />
+		</operation>
+		<operation name="create">
+			<input message="zns:createRequest" />
+			<output message="zns:createResponse" />
+			<fault message="zns:InvalidTypeFault" name="InvalidTypeFault" />
+			<fault message="zns:UnexpectedErrorFault" name="UnexpectedErrorFault" />
+		</operation>
+		<operation name="update">
+			<input message="zns:updateRequest" />
+			<output message="zns:updateResponse" />
+			<fault message="zns:InvalidTypeFault" name="InvalidTypeFault" />
+			<fault message="zns:UnexpectedErrorFault" name="UnexpectedErrorFault" />
+		</operation>
+		<operation name="delete">
+			<input message="zns:deleteRequest" />
+			<output message="zns:deleteResponse" />
+			<fault message="zns:InvalidTypeFault" name="InvalidTypeFault" />
+			<fault message="zns:InvalidValueFault" name="InvalidValueFault" />
+			<fault message="zns:UnexpectedErrorFault" name="UnexpectedErrorFault" />
+		</operation>
+		<operation name="query">
+			<input message="zns:queryRequest" />
+			<output message="zns:queryResponse" />
+			<fault message="zns:MalformedQueryFault" name="MalformedQueryFault" />
+			<fault message="zns:InvalidQueryLocatorFault" name="InvalidQueryLocatorFault" />
+			<fault message="zns:UnexpectedErrorFault" name="UnexpectedErrorFault" />
+		</operation>
+	</portType>
+	<binding name="SoapBinding" type="zns:Soap">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="login">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+			<fault name="LoginFault">
+				<soap:fault name="LoginFault" use="literal" />
+			</fault>
+			<fault name="UnexpectedErrorFault">
+				<soap:fault name="UnexpectedErrorFault" use="literal" />
+			</fault>
+		</operation>
+		<operation name="subscribe">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:header use="literal" message="zns:Header" part="SessionHeader" />
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+			<fault name="UnexpectedErrorFault">
+				<soap:fault name="UnexpectedErrorFault" use="literal" />
+			</fault>
+		</operation>
+		<operation name="create">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:header use="literal" message="zns:Header" part="SessionHeader" />
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+			<fault name="InvalidTypeFault">
+				<soap:fault name="InvalidType" use="literal" />
+			</fault>
+			<fault name="UnexpectedErrorFault">
+				<soap:fault name="UnexpectedErrorFault" use="literal" />
+			</fault>
+		</operation>
+		<operation name="update">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:header use="literal" message="zns:Header" part="SessionHeader" />
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+			<fault name="InvalidTypeFault">
+				<soap:fault name="InvalidType" use="literal" />
+			</fault>
+			<fault name="UnexpectedErrorFault">
+				<soap:fault name="UnexpectedErrorFault" use="literal" />
+			</fault>
+		</operation>
+		<operation name="query">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:header use="literal" message="zns:Header" part="SessionHeader" />
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+			<fault name="MalformedQueryFault">
+				<soap:fault name="MalformedQueryFault" use="literal" />
+			</fault>
+			<fault name="InvalidQueryLocatorFault">
+				<soap:fault name="InvalidQueryLocatorFault" use="literal" />
+			</fault>
+			<fault name="UnexpectedErrorFault">
+				<soap:fault name="UnexpectedErrorFault" use="literal" />
+			</fault>
+		</operation>
+		<operation name="delete">
+			<soap:operation soapAction="" />
+			<input>
+				<soap:header use="literal" message="zns:Header" part="SessionHeader" />
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+			<fault name="InvalidTypeFault">
+				<soap:fault name="InvalidTypeFault" use="literal" />
+			</fault>
+			<fault name="InvalidValueFault">
+				<soap:fault name="InvalidValueFault" use="literal" />
+			</fault>
+			<fault name="UnexpectedErrorFault">
+				<soap:fault name="UnexpectedErrorFault" use="literal" />
+			</fault>
+		</operation>
+	</binding>
+	<service name="ZuoraService">
+		<port name="Soap" binding="zns:SoapBinding">
+			<soap:address location="https://www1.zuora.com/apps/services/a/1.0" />
+		</port>
+	</service>
+</definitions>

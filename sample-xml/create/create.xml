@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+   <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+      <soapenv:Header>
+         <ns1:SessionHeader xmlns:ns1="http://api.zuora.com/" soapenv:mustUnderstand="0">
+            <ns1:session>B4EpRix4IEuLkbTv2fOD0nQLZfNqBNb3lB1VX/JosCxxuZjQULOSbw+OWkGzX12+NMRkXSDNHXgpryh8N6kGZw==</ns1:session>
+         </ns1:SessionHeader>
+      </soapenv:Header>
+      <soapenv:Body>
+         <ns1:create xmlns:ns1="http://api.zuora.com/">
+            <ns1:zObjects xmlns:ns2="http://object.api.zuora.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns2:Account">
+               <ns2:AccountNumber>t-1223471249003</ns2:AccountNumber>
+               <ns2:AllowInvoiceEdit>true</ns2:AllowInvoiceEdit>
+               <ns2:AutoPay>false</ns2:AutoPay>
+               <ns2:Batch>Batch1</ns2:Batch>
+               <ns2:BillCycleDay>1</ns2:BillCycleDay>
+               <ns2:CrmId>SFDC-1223471249003</ns2:CrmId>
+               <ns2:Currency>USD</ns2:Currency>
+               <ns2:CustomerServiceRepName>CSR Person</ns2:CustomerServiceRepName>
+               <ns2:Name>SomeAccount1223471249003</ns2:Name>
+               <ns2:PaymentTerm>Due Upon Receipt</ns2:PaymentTerm>
+               <ns2:PurchaseOrderNumber>PO-1223471249003</ns2:PurchaseOrderNumber>
+               <ns2:SalesRepName>Sales Person</ns2:SalesRepName>
+               <ns2:Status>Draft</ns2:Status>
+            </ns1:zObjects>
+         </ns1:create>
+      </soapenv:Body>
+   </soapenv:Envelope>
+
