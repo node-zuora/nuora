@@ -1,6 +1,6 @@
 {
     "name": "nuora",
-    "version": "1.0.3",
+    "version": "1.0.31",
     "preferGlobal": false,
     "description": "Node with Zuora. Provides an API for working with and querying Zuora's SOAP API",
     "main": "./index.js",
@@ -8,7 +8,10 @@
         "lib": "./lib"
     },
     "scripts": {},
-    "repository": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/node-zuora/nuora"
+    },
     "keywords": [
         "zuora",
         "node",
