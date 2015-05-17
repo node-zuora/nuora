@@ -31,7 +31,28 @@ $ node . -h
 Configuring
 -----------
 
-**You need to download your WSDL from your Zuora account and save it to the `config/` directory and set it's path in `config/zuora.js`**
+**Download a copy of your Zuora WSDL and set it's path in your Nuora configuration**
+```javascript
+var Nuora = require('nuora');
+var config = Nuora.config;
+
+//set your credentials and wsdl file location
+config.zuora.username = 'john';
+config.zuora.password = 'secret';
+config.zuora.wsdl = '/path-to-downloaded-zuora.wsdl'
+
+var nuora = Nuora.build(),
+    zuora = nuora.zuora;
+zuora.once('loggedin', function () {
+    console.log('Nuora is ready!');
+    var zuora = nuora.zuora;
+    var sql = "select id, name from account limit 1";
+    zuora.query(sql, function (err, data) {
+        console.log(err, data);
+    });
+});
+
+```
 
 
 To load custom configurations, you can copy and rename files in `nuora/config` to `<filename>.local.js`
