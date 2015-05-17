@@ -41,12 +41,11 @@ config.zuora.username = 'john';
 config.zuora.password = 'secret';
 config.zuora.wsdl = '/path-to-downloaded-zuora.wsdl'
 
-var nuora = Nuora.build(),
-    zuora = nuora.zuora;
+var nuora = Nuora.build();
+var zuora = nuora.zuora;
+var sql = "select id, name from account limit 1";
 zuora.once('loggedin', function () {
     console.log('Nuora is ready!');
-    var zuora = nuora.zuora;
-    var sql = "select id, name from account limit 1";
     zuora.query(sql, function (err, data) {
         console.log(err, data);
     });
