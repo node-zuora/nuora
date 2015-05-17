@@ -2,8 +2,20 @@ Nuora
 =====
 Node based Zuora API
 
+Install Nuora (Node + Zuora)
+----------------------------
+```bash
+npm install nuora
 ```
-$ node . -h
+**You may want to install Nuora globally for accessing the CLI**
+```bash
+sudo npm install -g nuora
+```
+
+Run Nuora using the CLI
+-----------------------
+```
+$ ./node_modules/nuora -h
 
   Usage: nuora OPTION...
 
@@ -26,7 +38,6 @@ $ node . -h
 
 
 ```
-
 
 Configuring
 -----------
@@ -53,10 +64,18 @@ zuora.once('loggedin', function () {
 
 ```
 
+Adding Nuora to your package
+----------------------------
+In your dependencies
+```
+"nuora": "1.0.x"
+```
+**Nuora is under active development, because of the nature that this service provides, all minor patch updates will be graceful improvements on existing features to maintain backwards compatibility.**
 
-To load custom configurations, you can copy and rename files in `nuora/config` to `<filename>.local.js`
-
-**You must at least do this for `config/nuora.js`**
+Developing with custom configurations
+-------------------------------------
+**This is to make life easy when developing directly on and extending Nuora functionality**
+To load custom configurations, you can copy and rename files in `nuora/config/` to `<filename>.local.js`. Then in your `nuora/config/nuora.local.js` you can specify the `*.local.js` file you want to load:
 ```bash
 cp config/nuora.js config/nuora.local.js
 ```
@@ -69,17 +88,6 @@ module.exports = {
     ...
 ```
 
-Install Modules
---------------------
-```bash
-npm install ./nuora
-```
-
-Start
------
-```bash
-node nuora
-```
 
 Building Docs/Wiki
 ------------------
