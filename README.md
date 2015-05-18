@@ -64,6 +64,34 @@ zuora.once('loggedin', function () {
 
 ```
 
+Examples
+--------
+
+###Create an account in Zuora
+
+```
+//following from above
+var nuora = Nuora.build();
+var zuora = nuora.zuora;
+var soap = zuora.soap;
+zuora.once('loggedin', function () {
+    var accountParams = zuora.createObject('Account', {
+            currency: 'USD',
+            paymentTerm: 'Due Upon Receipt',
+            status: 'Draft',
+            batch: 'Batch1',
+            //start the bill cycle today
+            billCycleDay: new Date().getDate(),
+            name: 'Nuora'
+        });
+    var body = soap.action('create', [accountParams]);
+    soap.addBody(body);
+    zuora.send(soap, function (err, data) {
+        console.log(err, data);
+    });
+});
+```
+
 Adding Nuora to your package
 ----------------------------
 In your dependencies
