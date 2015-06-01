@@ -1,6 +1,6 @@
 {
     "name": "nuora",
-    "version": "1.0.4",
+    "version": "1.0.41",
     "preferGlobal": false,
     "description": "Node with Zuora. Provides an API for working with and querying Zuora's SOAP API",
     "main": "./index.js",
