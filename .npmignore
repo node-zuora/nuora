@@ -1,11 +1,6 @@
 *.log
 *.pid
 node_modules
-watch
-start
-kill
-test
-test2
 config/*local*
 *.wsdl
 .git

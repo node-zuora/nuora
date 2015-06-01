@@ -5,6 +5,3 @@ node_modules/
 .sass-cache/
 config/*local*
 docs/*
-.DS_Store
-.idea
-Thumbs.db
