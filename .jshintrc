@@ -1,0 +1,8 @@
+{
+    "curly": true,
+    "loopfunc": true,
+    "mocha": true,
+    "node": true,
+    "undef": true,
+    "unused": "vars"
+}

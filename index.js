@@ -4,6 +4,7 @@
  */
 ;(function () {
     "use strict";
+	require('colors');
     var path = require('path'),
 		config = require('./config/nuora'),
 		Nuora = require('./lib/nuora');
