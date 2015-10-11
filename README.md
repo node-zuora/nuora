@@ -45,7 +45,10 @@ See Zuora's Knowledge Center:
 [how to download the latest version of my Zuora WSDL](https://knowledgecenter.zuora.com/BC_Developers/SOAP_API/AB_Getting_started_with_the__SOAP_API/B_Zuora_WSDL#Download_the_Latest_Version_of_the_WSDL)
 
 
-**Set the WSDL's path in your Nuora configuration**
+**Set the WSDL's path in the Nuora config object (see below)**... Nuora will automatically configure your endpoint based off the WSDL's "Zuora Service" field.
+
+**Note:** Zuora's Sandbox API uses it's own WSDL and endpoint, be sure to download that from within the Zuora Sandbox interface, following the same methods as the link above.
+
 ```javascript
 var Nuora = require('nuora');
 var config = Nuora.config;

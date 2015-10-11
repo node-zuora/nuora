@@ -1,8 +1,8 @@
+var path = require('path');
 module.exports = {
     password: '',
     username: '',
-    endpoint: 'https://apisandbox.zuora.com/apps/services/a/66.0',
-    wsdl: __dirname + '/zuora.a.66.0.wsdl',
+    wsdl: path.join(__dirname, 'zuora.a.70.0.wsdl'),
     //this injects WSDL objects on initialization, sorted
     wsdlMixins: {
         RatePlanData: [

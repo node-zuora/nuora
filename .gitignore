@@ -3,5 +3,6 @@
 *.wsdl
 node_modules/
 .sass-cache/
-config/*local*
+config/*
+!config/*sample.js
 docs/*
