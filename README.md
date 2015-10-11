@@ -1,6 +1,6 @@
 Nuora
 =====
-Node based Zuora API
+Zuora SOAP API on NodeJs
 
 Install Nuora (Node + Zuora)
 ----------------------------
@@ -41,8 +41,11 @@ $ ./node_modules/nuora -h
 
 Configuring
 -----------
+See Zuora's Knowledge Center:
+[how to download the latest version of my Zuora WSDL](https://knowledgecenter.zuora.com/BC_Developers/SOAP_API/AB_Getting_started_with_the__SOAP_API/B_Zuora_WSDL#Download_the_Latest_Version_of_the_WSDL)
 
-**Download a copy of your Zuora WSDL and set it's path in your Nuora configuration**
+
+**Set the WSDL's path in your Nuora configuration**
 ```javascript
 var Nuora = require('nuora');
 var config = Nuora.config;
