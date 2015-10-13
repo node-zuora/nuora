@@ -39,11 +39,23 @@ $ ./node_modules/nuora -h
 
 ```
 
+Credentials
+-----------
+As of v1.2 Nuora expects all credentials to be in **.env** file in the project root and should expose the following variables:
+
+```
+ZUORA_USERNAME='john'
+ZUORA_PASSWORD='pass'
+```
+
+***This means we no longer look for config.zuora.password or config.zuora.username***
+
+
 Configuring
 -----------
+
 See Zuora's Knowledge Center:
 [how to download the latest version of my Zuora WSDL](https://knowledgecenter.zuora.com/BC_Developers/SOAP_API/AB_Getting_started_with_the__SOAP_API/B_Zuora_WSDL#Download_the_Latest_Version_of_the_WSDL)
-
 
 **Set the WSDL's path in the Nuora config object (see below)**... Nuora will automatically configure your endpoint based off the WSDL's "Zuora Service" field.
 

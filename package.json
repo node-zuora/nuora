@@ -1,47 +1,47 @@
 {
-    "name": "nuora",
-    "version": "1.2.0",
-    "preferGlobal": false,
-    "description": "Node with Zuora. Provides an API for working with and querying Zuora's SOAP API",
-    "main": "./index.js",
-    "directories": {
-        "lib": "./lib"
-    },
-    "scripts": {
-        "test": "./node_modules/.bin/mocha --reporter spec -r test/support/chai"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/node-zuora/nuora"
-    },
-    "keywords": [
-        "zuora",
-		"node",
-		"zuora soap api",
-		"query zuora",
-		"node with zuora",
-		"zuora api"
-	],
-    "devDependencies": {
-        "node-inspector": "*",
-        "jsdoc": "*",
-        "jsdom": "3.1.x",
-        "chai": "2.3.x",
-        "mocha": "2.2.x"
-    },
-    "dependencies": {
-        "colors": "*",
-        "libxml-to-js": "^0.3.x",
-        "data2xml": "^1.2.x",
-        "winston": "^0.9.x",
-        "commander": "^2.8.x"
-    },
-    "engine": {
-        "node": ">=0.10.x"
-    },
-    "author": {
-        "name": "Nick Riley",
-        "email": "nick@sparkida.com",
-        "url": "http://sparkida.com"
-    }
+  "name": "nuora",
+  "version": "1.2.0",
+  "preferGlobal": false,
+  "description": "Node with Zuora. Provides an API for working with and querying Zuora's SOAP API",
+  "main": "./index.js",
+  "directories": {
+    "lib": "./lib"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --bail --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/node-zuora/nuora"
+  },
+  "keywords": [
+    "zuora",
+    "node",
+    "zuora soap api",
+    "query zuora",
+    "node with zuora",
+    "zuora api"
+  ],
+  "devDependencies": {
+    "node-inspector": "*",
+    "jsdoc": "*",
+    "mocha": "^2.3.3",
+    "jsdom": "^6.5.1"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "libxml-to-js": "^0.3.x",
+    "data2xml": "^1.2.x",
+    "winston": "^0.9.x",
+    "commander": "^2.8.x",
+    "dotenv": "^1.2.0"
+  },
+  "engine": {
+    "node": ">=0.10.x"
+  },
+  "author": {
+    "name": "Nick Riley",
+    "email": "nick@sparkida.com",
+    "url": "http://sparkida.com"
+  }
 }
