@@ -1,0 +1,25 @@
+var nuora,
+    // -- may need to change this to the nuora directory
+    Nuora = require(__dirname),
+    zuora;
+
+nuora = Nuora.create();
+zuora = nuora.zuora;
+config = nuora.config;
+
+nuora.zuora.once('loggedin', function () {
+    console.log('Nuora logged in and ready');
+    var soap = zuora.soap.create(),
+        subscriptionAmendment = zuora.createObject('Amendment', {
+            name: 'changeInvoiceOwner',
+            type: 'OwnerTransfer',
+            subscriptionId: '2c92c0f84cff94f2014d02be73b80ed8',
+            destinationInvoiceOwnerId: '2c92c0f94b34f993014b3ae3f9b82778'
+        }),
+        body = soap.action('create', [subscriptionAmendment]);
+    soap.addBody(body);
+    zuora.send(soap, function (err, data) {
+        console.log(err, data);
+    });
+});
+
