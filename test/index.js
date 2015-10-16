@@ -9,7 +9,7 @@ Nuora.opts.option('--reporter [value]', '');
 Nuora.opts.option('-r [value]', '');
 Nuora.opts.option('-b,--bail [value]', '');
 
-describe('Loading Nuora', function () {
+describe('>Loading Nuora', function () {
 	this.timeout(6000);
     //using nuora as a module
 	before(function (done) {
@@ -26,7 +26,6 @@ describe('Loading Nuora', function () {
 		it('should return an array of no more than one element', function (done) {
 			var sql = "select id from account limit 1",
 				callback = function (err, data) {
-					console.log(data);
 					queryData = data;
 					done(err);
 				};
@@ -44,20 +43,18 @@ describe('Loading Nuora', function () {
     var account = {},
         contact = {};
 
-    describe.only('Create an account', function () {
+    describe('>Create an account', function () {
         it('creates draft account and returns success: true', function (done) {
-            var accountObject = {
-                    name: 'Nicholas Riley' + Date.now(),
+            var accountObject = zuora.createObject('Account', {
+                    name: 'Mars Rover' + Date.now(),
                     batch: 'Batch1',
                     billCycleDay: 1,
                     currency: 'USD',
                     paymentTerm: 'Due Upon Receipt',
                     status: 'Draft'
-                },
-                body,
-                soap = zuora.soap.create();
-            accountObject = zuora.createObject('Account', accountObject);
-            body = soap.action('create', [accountObject]);
+                }),
+                soap = zuora.soap.create(),
+				body = soap.action('create', [accountObject]);
             soap.addBody(body);
             zuora.send(soap, function (err, data) {
                 account = data.result;
@@ -81,39 +78,41 @@ describe('Loading Nuora', function () {
                     accountId: account.Id,
                     firstName: 'Mars',
                     lastName: 'Rover',
-                    mobilePhone: '888-555-5555',
+                    mobilePhone: '313-555-5555',
+					country: 'USA',
+					state: 'Ca',
                     city: 'LA'
-                });
-            soap = zuora.soap.create();
-            body = soap.action('create', [contactObject]);
+                }),
+				soap = zuora.soap.create(),
+				body = soap.action('create', [contactObject]);
             soap.addBody(body);
             zuora.send(soap, function (err, data) {
                 contact = data.result;
                 done(err);
             });
         });
+
         describe('Contact.create response', function () {
             it('has Id property', function () {
-                expect(contact).to.have.property('Id');
+				assert(contact.Id, 'should have "Id" property');
             });
             it('has success property equal to true', function () {
-                expect(contact).to.have.property('success').equal(true);
+				assert.equal(contact.success, true, 'should have "success" property equal to true');
             });
         });
     });
 
     describe('Update account', function () {
-        this.timeout(10000);
         var result;
-        it('returns success: true', function (done) {
-            soap = zuora.soap.create();
-            accountObject = zuora.createObject('Account', {
-                Id: account.Id,
-                BillToId: contact.Id,
-                SoldToId: contact.Id,
-                Status: 'Active'
-            });
-            body = soap.action('update', [accountObject]);
+        it('should return "success" property equal to true', function (done) {
+            var soap = zuora.soap.create(),
+				accountObject = zuora.createObject('Account', {
+					Id: account.Id,
+					BillToId: contact.Id,
+					SoldToId: contact.Id,
+					Status: 'Active'
+				}),
+				body = soap.action('update', [accountObject]);
             soap.addBody(body);
             zuora.send(soap, function (err, data) {
                 result = data.result;
@@ -122,16 +121,16 @@ describe('Loading Nuora', function () {
         });
         describe('Account Update Response', function () {
             it('has Id property', function () {
-                expect(result).to.have.property('Id');
+                assert(result.Id);
             });
             it('has success property equal to true', function () {
-                expect(result).to.have.property('success').equal(true);
+                assert.equal(result.success, true);
             });
         });
     });
 
-    describe('Create a subscription', function () {
-        this.timeout(10000);
+    describe.skip('Create a subscription', function () {
+		var result;
         it('should return subscription id', function (done) {
             var ztime = zuora.time(),
                 body,
@@ -178,13 +177,13 @@ describe('Loading Nuora', function () {
         });
         describe('Subscription Creation Response', function () {
             it('has SubscriptionId property', function () {
-                expect(result).to.have.property('SubscriptionId');
+                assert(result.SubscriptionId);
             });
             it('has SubscriptionNumber property', function () {
-                expect(result).to.have.property('SubscriptionNumber');
+                assert(result.SubscriptionNumber);
             });
             it('has success property equal to true', function () {
-                expect(result).to.have.property('success').equal(true);
+                assert(result.success).equal(true);
             });
         });
     });
@@ -224,24 +223,25 @@ describe('Loading Nuora', function () {
 
         describe('Delete Response', function () {
             it('should be an object', function () {
-                assert.typeOf(deleteResponse, 'object');
+                assert.equal(typeof deleteResponse, 'object');
             });
             it('should have a result array or object', function () {
-                assert.property(deleteResponse, 'result');
+                assert.equal(typeof deleteResponse, 'object');
                 if (!(deleteResponse.result instanceof Array)) {
-                    assert.typeOf(deleteResponse.result, 'object');
+                    assert.equal(typeof deleteResponse.result, 'object');
                     deleteResponse.result = [deleteResponse.result];
                 }
             });
             describe('DeleteResponse.Result', function () {
                 it('should have property "success" equal to true', function () {
                     deleteResponse.result.map(function (res) {
-                        expect(res).to.have.property('success').equal(true);
+                        assert.equal(res.success, true);
                     });
                 });
                 it('should have property "id" with length of 32', function () {
                     deleteResponse.result.map(function (res) {
-                        expect(res).to.have.property('id').with.length(32);
+                        assert(res.id);
+						assert.equal(res.id.length, 32);
                     });
                 });
             });
