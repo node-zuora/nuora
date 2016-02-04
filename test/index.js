@@ -37,8 +37,6 @@ describe('>Loading Nuora', function () {
 		});
 	});
 	
-
-
     var account = {},
         contact = {};
 
