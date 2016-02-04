@@ -4,6 +4,5 @@
 *.wsdl
 node_modules/
 .sass-cache/
-config/*
-!config/*sample.js
+config/*.wsdl
 docs/*

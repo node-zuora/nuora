@@ -13,7 +13,6 @@ describe('>Loading Nuora', function () {
 	this.timeout(6000);
     //using nuora as a module
 	before(function (done) {
-        assert(Nuora.opts, 'missing opts property');
 		nuora = Nuora.build();
 		zuora = nuora.zuora;
 		zuora.on('loggedin', function () {
