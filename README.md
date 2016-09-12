@@ -73,7 +73,7 @@ Examples
 //following from above
 var nuora = Nuora.build();
 var zuora = nuora.zuora;
-var soap = zuora.soap;
+var soap = zuora.soap.create();
 zuora.once('loggedin', function () {
     var accountParams = zuora.createObject('Account', {
             currency: 'USD',
